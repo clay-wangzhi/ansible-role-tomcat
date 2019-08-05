@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/zaxos/tomcat-ansible-role.svg?branch=master)](https://travis-ci.org/zaxos/tomcat-ansible-role)
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-_zaxos.tomcat--ansible--role-blue.svg)](https://galaxy.ansible.com/zaxos/tomcat-ansible-role/)
-
 tomcat-ansible-role
 ===================
 
@@ -20,28 +17,24 @@ Requirements
 Installation
 ------------
 ```
-$ ansible-galaxy install zaxos.tomcat-ansible-role
+$ ansible-galaxy install clay_wangzhi.tomcat
 ```
 
 Example Playbook
 ----------------
 ```yaml
+---
 - hosts: servers
   become: true
   vars:
-    tomcat_version: 8.5.23
-    
-    tomcat_permissions_production: True
-    
-    tomcat_users:
-      - username: "tomcat"
-        password: "t3mpp@ssw0rd"
-        roles: "tomcat,admin,manager,manager-gui"
-      - username: "exampleuser"
-        password: "us3rp@ssw0rd"
-        roles: "tomcat"        
+    #tomcat_permissions_production: True
+    #tomcat_state: present
+    tomcat_version: 8.5.42
+    tomcat_java_version: 1.8
+
   roles:
     - role: zaxos.tomcat-ansible-role
+
 ```
 
 Role Variables
@@ -91,7 +84,7 @@ Some defaults (probably not requiring tampering):
 - `tomcat_service_name`: tomcat
 - `tomcat_service_enabled_on_startup`: True
 - `tomcat_java_home`: /usr/lib/jvm/jre
-- `tomcat_downloadURL`: https://<i></i>archive.apache.org/dist
+- `tomcat_downloadURL`: https://mirrors.aliyun.com/apache
 - `tomcat_user`: tomcat
 - `tomcat_group`: tomcat
 - `tomcat_listen_address`: 0.0.0.0
