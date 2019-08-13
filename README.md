@@ -33,7 +33,7 @@ Example Playbook
     tomcat_java_version: 1.8
 
   roles:
-    - role: zaxos.tomcat-ansible-role
+    - role: clay_wangzhi.tomcat
 
 ```
 
