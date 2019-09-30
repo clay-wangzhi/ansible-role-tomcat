@@ -87,7 +87,6 @@ Some defaults (probably not requiring tampering):
 - `tomcat_downloadURL`: https://mirrors.aliyun.com/apache
 - `tomcat_user`: tomcat
 - `tomcat_group`: tomcat
-- `tomcat_listen_address`: 0.0.0.0
 - `tomcat_temp_download_path`: /tmp/ansibletomcattempdir
 
 Custom templates for server.xml, users.xml, systemd service file, etc.:
