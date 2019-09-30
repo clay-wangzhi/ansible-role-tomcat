@@ -20,8 +20,8 @@ tomcat_group: tomcat
 
 tomcat_install_path: /home/tomcat
 tomcat_service_name: tomcat
-tomcat_jvm_memory_percentage_xms: 15
-tomcat_jvm_memory_percentage_xmx: 55
+tomcat_jvm_memory_percentage_xms: 50
+tomcat_jvm_memory_percentage_xmx: 50
 
 tomcat_permissions_production: False
 tomcat_webapps_auto_deployment: True
