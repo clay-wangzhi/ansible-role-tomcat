@@ -39,11 +39,4 @@
   <user username="role1" password="<must-be-changed>" roles="role1"/>
 -->
 
-{% for role in tomcat_user_roles %}
-  <role rolename="{{ role }}"/>
-{% endfor %}
-{% for user in tomcat_users %}
-  <user username="{{ user.username }}" password="{{ user.password }}" roles="{{ user.roles }}"/>
-{% endfor %}
-
 </tomcat-users>
