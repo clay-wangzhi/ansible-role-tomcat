@@ -1,0 +1,13 @@
+{{ tomcat_install_path }}/{{ tomcat_service_name }}/logs/catalina.out {
+        su {{ tomcat_user }} {{ tomcat_group }}
+        daily
+        rotate 90
+        missingok
+        notifempty
+        dateext
+        compress
+        delaycompress
+        sharedscripts
+        copytruncate
+        create 644 {{ tomcat_user }} {{ tomcat_group }}
+}

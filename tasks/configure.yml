@@ -37,6 +37,11 @@
     dest: /usr/lib/systemd/system/{{ tomcat_service_name }}.service
   notify: restart tomcat
 
+- name: Configure logrotate file {{ tomcat_service_name }}
+  template:
+    src: "{{ tomcat_template_logrotate }}"
+    dest: /etc/logrotate.d/{{ tomcat_service_name }}
+
 - name: Enable tomcat service on startup
   systemd:
     name: "{{ tomcat_service_name }}"

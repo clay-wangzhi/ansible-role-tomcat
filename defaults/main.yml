@@ -40,6 +40,7 @@ tomcat_port_debug: 8000
 tomcat_service_enabled_on_startup: True
 
 tomcat_template_systemd_service: "tomcat.service.j2"
+tomcat_template_logrotate: "tomcat-logrotate.j2"
 tomcat_template_server: "tomcat-server-{{ '.'.join(tomcat_version.split('.')[:2]) }}.xml.j2"
 tomcat_template_users: "tomcat-users-{{ '.'.join(tomcat_version.split('.')[:2]) }}.xml.j2"
 
