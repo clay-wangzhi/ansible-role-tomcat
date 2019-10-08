@@ -40,10 +40,6 @@ tomcat_port_debug: 8000
 
 tomcat_service_enabled_on_startup: True
 
-tomcat_users: []
-
-tomcat_user_roles: []
-
 tomcat_template_manager_context: "manager-context.xml.j2"
 tomcat_template_host_manager_context: "host-manager-context.xml.j2"
 tomcat_template_systemd_service: "tomcat.service.j2"

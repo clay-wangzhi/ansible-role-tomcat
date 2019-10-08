@@ -7,12 +7,6 @@
     dest: "{{ tomcat_install_path }}/apache-tomcat-{{ tomcat_version }}/conf/server.xml"
   notify: restart tomcat
 
-- name: Set fact of user roles to be enabled
-  set_fact:
-    tomcat_user_roles: "{{ (tomcat_user_roles + item.roles.split(',')|list)|unique }}"
-  with_items:
-    - "{{ tomcat_users }}"
-
 - name: Setup tomcat-users.xml
   template:
     src: "{{ tomcat_template_users }}"
