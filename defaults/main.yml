@@ -23,7 +23,6 @@ tomcat_service_name: tomcat
 tomcat_jvm_memory_percentage_xms: 50
 tomcat_jvm_memory_percentage_xmx: 50
 
-tomcat_permissions_production: False
 tomcat_webapps_auto_deployment: True
 tomcat_permissions_ensure_on_every_run: True
 
