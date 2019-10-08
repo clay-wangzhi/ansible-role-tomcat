@@ -18,6 +18,11 @@
     path: /usr/lib/systemd/system/{{ tomcat_service_name }}.service
     state: absent
 
+- name: (uninstall) Remove logrotate file {{ tomcat_service_name }}
+  file:
+    path: /etc/logrotate.d/{{ tomcat_service_name }}
+    state: absent
+
 - name: (uninstall) Perform systemctl daemon-reload
   systemd:
     daemon_reload: yes
