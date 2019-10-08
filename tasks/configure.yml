@@ -19,17 +19,10 @@
     dest: "{{ tomcat_install_path }}/{{ tomcat_service_name }}"
     state: link
 
-- name: Set production permissions
-  include: set-production-permissions.yml
-  when: >
-    (tomcat_installed is changed or tomcat_permissions_ensure_on_every_run) and
-    tomcat_permissions_production
-
 - name: Set non production permissions
-  include: set-non-production-permissions.yml
+  include: set-permissions.yml
   when: >
-    (tomcat_installed is changed or tomcat_permissions_ensure_on_every_run) and
-    not tomcat_permissions_production
+    tomcat_installed is changed or tomcat_permissions_ensure_on_every_run
 
 - name: Configure service file {{ tomcat_service_name }}.service
   template:
