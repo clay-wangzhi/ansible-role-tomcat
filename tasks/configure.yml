@@ -24,6 +24,11 @@
   when: >
     tomcat_installed is changed or tomcat_permissions_ensure_on_every_run
 
+- name: Delete webapps dir
+  file:
+    path: "{{ tomcat_install_path }}/{{ tomcat_service_name }}/webapps"
+    state: absent
+    
 - name: Configure service file {{ tomcat_service_name }}.service
   template:
     src: "{{ tomcat_template_systemd_service }}"
