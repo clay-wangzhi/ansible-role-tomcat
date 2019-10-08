@@ -17,6 +17,8 @@
   file:
     src: "{{ tomcat_install_path }}/apache-tomcat-{{ tomcat_version }}"
     dest: "{{ tomcat_install_path }}/{{ tomcat_service_name }}"
+    owner: "{{ tomcat_user }}"
+    group: "{{ tomcat_group }}"
     state: link
 
 - name: Set non production permissions
