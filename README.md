@@ -27,8 +27,6 @@ Example Playbook
 - hosts: servers
   become: true
   vars:
-    #tomcat_permissions_production: True
-    #tomcat_state: present
     tomcat_version: 8.5.42
     tomcat_java_version: 1.8
 
@@ -62,10 +60,6 @@ If set to "True", tomcat host manager app will be accessible only from localhost
 Change it to "True" in order to configure tomcat to allow remote debugging. Default debug port is set to tcp/8000 (you can change it through the corresponding variable).
 
 File permissions:
-- `tomcat_permissions_production`: False  
-For production installation, set this variable to "True" for more strict security. For development or low-security/more-ease installation, set this variable to "False". Default is "False".  
-  * If set to "True", all tomcat files are owned by root with group tomcat. Owner has read/write privileges, group only has read and world has no permissions. The exceptions are the logs, temp and work directory that are owned by the tomcat user rather than root.  
-  * If set to "False", all tomcat files are owned by tomcat with group tomcat. Owner and group has read/write privileges and world only has read permissions.
 - `tomcat_webapps_auto_deployment`: True  
 For better security, auto-deployment should be disabled and web applications should be deployed as exploded directories. If auto-deployment is disabled, set this to "False". This variable makes sense only for production installation (if tomcat_permissions_production is "True"). Default is "True".  
   * If set to "True", webapps subdirectory is owned by tomcat with group tomcat.
@@ -84,7 +78,7 @@ Some defaults (probably not requiring tampering):
 - `tomcat_service_name`: tomcat
 - `tomcat_service_enabled_on_startup`: True
 - `tomcat_java_home`: /usr/lib/jvm/jre
-- `tomcat_downloadURL`: https://mirrors.aliyun.com/apache
+- `tomcat_downloadURL`: https://archive.apache.org/dist
 - `tomcat_user`: tomcat
 - `tomcat_group`: tomcat
 - `tomcat_temp_download_path`: /tmp/ansibletomcattempdir
